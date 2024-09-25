@@ -1,0 +1,468 @@
+
+@font-face {
+    font-family: "TrebuchetMS";
+    src: url('fonts/TrebuchetMS.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "BebasNeue";
+    src: url('fonts/BebasNeue.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "WebsymbolsRegular";
+    src: url('fonts/websymbols-regular-webfont.eot');
+    src: url('fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/websymbols-regular-webfont.woff') format('woff'),
+        url('fonts/websymbols-regular-webfont.ttf') format('truetype'),
+        url('fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);   
+    width: auto;
+}
+
+.gear {
+    font-family: "WebsymbolsRegular";
+}
+#logo {
+    float: left;
+    width: 100%;
+    background-color: #afd0dc;    
+    text-align: center;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 300ms;
+    
+}
+
+#logo:hover {
+    border-radius: 2px;
+    background-color: #a5b9bd;
+}
+
+#logo:hover .gear {
+    animation: fromBellow 500ms linear;
+
+}
+
+@keyframes fromBellow {
+    0% {
+        transform: translateY(0%)
+    }
+
+    50% {
+        transform: translateY(200%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+#logo .gear {
+    display: block;
+    float: left;
+    font-size: 30px;
+    margin-top: 25px;
+    margin-left: 20px;
+    animation-name: rotate-gear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotate-gear {
+    from {
+        transform: rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes fromRight {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+.enlace{
+    color: black;
+    float: left;
+}
+nav {
+    width: 100%;
+    float: left;
+    
+    margin-top: 25px;
+
+}
+
+nav a {
+    color: black;
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: Bebasneue;
+}
+
+nav a:hover {
+    color: #80a3b3;
+    transform: scale(1.2, 1.2);
+}
+
+#banner {
+    width: 95, 5%;
+    
+    border: 10px solid white;
+    box-shadow: 0px 0px 2px gray;
+    background: url(img/bakbaner.png);
+    overflow: hidden;
+    background-position: -266px -70px;
+    margin: 15px auto;
+    animation: backBanner 20s linear;
+}
+
+@keyframes backBanner {
+    0% {
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-position: -266px -70px;
+    }
+}
+
+#banner h1 {
+    display: block;
+    width: 850px;
+    font-family: "BebasNeue";
+    color: white;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 1px black;
+    margin: 27px auto;
+    animation: showText 20s linear;
+}
+
+@keyframes showText {
+    0% {
+        transform: translateX(-600%) scale(4, 4);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateX(600%) scale(4, 4);
+        opacity: 1;
+    }
+
+    75% {
+        transform: translateX(-600%) scale(4, 4);
+        text-shadow: none;
+        color: transparent;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0%) scale(1, 1);
+        text-shadow: 2px 2px 1px black;
+        color: white;
+        opacity: 1;
+    }
+}
+
+#articles {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    padding: 25px;
+    padding-left: 170px;
+}
+.foto {
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+#articles p {
+    width: 70%;
+    padding-left: 15px;
+    margin-left: 25px;
+    text-align: justify;
+}
+
+.card {
+
+    float: left;
+    width: 100%; 
+    color: black;
+    border: 1px solid #ccc;
+    box-shadow: 5px 1px 5px #414141;
+    background: #b49191;
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 20px; 
+        
+}
+
+.card:hover {
+    transition: all 300ms;
+    background: #aa7777;
+}
+
+.card .icon {
+    display: block;
+    width: 100%;
+    height: 130px;
+    font-family: "WebsymbolsRegular";
+    font-size: 50px;
+    line-height: 110px;
+    text-align: center;
+    margin: 0px auto;
+    transition: all 300ms;
+}
+
+.card:hover .icon {
+    font-size: 70px;
+    color: #c5b8b8;
+    animation: showIcon 300ms linear;
+}
+
+@keyframes showIcon {
+    from {
+        transform: translateY(-200%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.card .category {
+    width: 100%;
+    padding-bottom: 25px;    
+    font-family: "TrebuchetMS";
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #114b71;
+    transition: all 300ms;
+}
+
+.card:hover .category {
+    color: white;
+    animation: showCategory 400ms linear;
+}
+
+@keyframes showCategory {
+    from {
+        transform: translateY(-300%);
+        color: black;
+
+        to {
+            transform: translateY(0%);
+            color: white;
+        }
+    }
+}
+
+.card .description {
+    text-align: center;
+    padding-bottom: 15px;
+    color: #111d24;
+    font-family: "TrebuchetMS";
+    font-size: 20px;
+    transition: all 400ms;
+}
+
+.card:hover .description {
+    color: white;
+    animation: showDescription 400ms linear;
+}
+
+@keyframes showDescription {
+    from {
+        transform: translateX(-300%);
+        color: black;
+
+        to {
+            transform: translateX(0%);
+            color: white;
+        }
+    }
+}
+
+
+
+.layout {
+    width: 100%;
+    padding-top: 40px;
+    
+    background: rgb(85, 82, 82);
+    color: white;
+    overflow: hidden;
+}
+
+.wrap>div {
+    float: left;
+    width: 100%;
+    margin-left: 10px;
+    text-align: center;
+    color: white;
+    font-family: "TrebuchetMS";
+}
+
+.layout a {
+    text-decoration: none;
+    color: #37bcf9;
+    transition: all 300ms;
+}
+
+.layout h5 {
+    display: block;
+    width: 23%;
+    background: white;
+    height: 50px;
+    letter-spacing: 2px;
+    text-align: left;
+    padding-left: 5px;
+    font-family: "BebasNeue";
+    font-size: 35px;
+    line-height: 55px;
+    color: black;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.layout ul {
+    text-align: left;
+    margin: 20px;
+    font-size: 15px;
+}
+.layout ul li {
+    margin-top: 10px;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.layout ul li:hover {
+    padding-left: 40px;
+    width: 100%;
+    color: pink;
+}
+
+.layout ul li a {
+    display: block;
+    height: 10px;
+    transition: all 300ms;
+}
+
+
+.layout iframe {
+    width: 100%;
+    margin-top: 10px;
+    padding-right: 20px;
+    border-radius: 5px;
+    border: 5px solid white;
+    box-shadow: 0px 0px 5px gray;
+}
+
+.layout img {
+    margin-bottom: 15px;
+
+}
+
+.layout #browsers img {
+    width: 45px;
+}
+.layout #contact{
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: white;
+    text-align: left;
+    
+}
+@media(max-width:1259px){
+    .layout iframe {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+@media(max-width:390px){
+    .layout h5 {
+        display: block;
+        width: 37%;
+        background: white;      
+        
+        text-align: left;
+        padding-left: 5px;
+        font-family: "BebasNeue";
+        font-size: 15px;
+        
+        color: black;
+        border-radius: 5px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    #banner{
+        width: 80%;  
+        margin-left: 25px;  
+        border: 10px solid white;
+        box-shadow: 0px 0px 2px gray;
+        background: url(img/bakbaner.png);
+        overflow: hidden;
+        background-position: -266px -70px;
+        animation: backBanner 20s linear;
+    }
+    .layout #contact{
+        font-size: 10px;
+        
+    }
+    .layout iframe {
+        width: 75%;
+        padding: 0;
+        margin: 0;
+    }
+    #banner h1 {
+        
+        width: 60%;        
+        font-size: 9px;       
+   }
+   #articles {
+    width: 54%;
+    float: left;
+    margin: 0 auto;
+    padding: 10px;
+    
+}
+.foto {
+    clear: both;
+    margin-left: 51px;
+    margin-bottom: 10px;
+}
+#articles p {
+    
+    width: 100%;   
+    text-align: justify;
+}
+    
+}
